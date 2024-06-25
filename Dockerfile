@@ -25,6 +25,9 @@ ENV AIRFLOW__CORE__PLUGINS_FOLDER=/usr/local/airflow/plugins
 ENV AIRFLOW__CORE__EXECUTOR=LocalExecutor
 ENV AIRFLOW__CORE__SQL_ALCHEMY_CONN="postgresql+psycopg2://postgres:postgres@postgres:5432/airflow"
 
+# Добавим шифрование
+ENV AIRFLOW__CORE__FERNET_KEY="Su49kpznS8uY1M8BArUGLF_eNQMjhgT64s1AX3o_0lA="
+
 # Отключим примеры кода
 ENV AIRFLOW__CORE__LOAD_EXAMPLES=False
 
