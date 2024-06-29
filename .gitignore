@@ -1,0 +1,6 @@
+# Dirs
+__pycache__/
+.devcontainer/
+
+# Files
+dependabot.yml
