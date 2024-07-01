@@ -12,6 +12,7 @@ from airflow.utils.dates import days_ago
 
 CON = sqlite3.connect("example.db")
 
+
 def extract_data(url, tmp_file, **context) -> None:
     """Extract CSV."""
 
@@ -49,7 +50,10 @@ extract_data = PythonOperator(
     python_callable=extract_data,
     dag=dag,
     op_kwargs={
-        "url": "https://raw.githubusercontent.com/dm-novikov/stepik_airflow_course/main/data/data.csv",
+        "url": (
+            "https://raw.githubusercontent.com/dm-novikov/"
+            "stepik_airflow_course/main/data/data.csv"
+        ),
         "tmp_file": "/tmp/file.csv",
     },
 )

@@ -5,7 +5,11 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.utils.dates import days_ago
 
 
-dag = DAG('dag_3_2_9',schedule_interval=timedelta(days=1), start_date=days_ago(1))
+dag = DAG(
+    'dag_3_2_9',
+    schedule_interval=timedelta(days=1),
+    start_date=days_ago(1),
+)
 t1 = DummyOperator(task_id='task_1', dag=dag)
 t2 = DummyOperator(task_id='task_2', dag=dag)
 t3 = DummyOperator(task_id='task_3', dag=dag)
