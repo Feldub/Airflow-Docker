@@ -18,7 +18,7 @@ def pull_function(ti, **context):
 
 
 dag = DAG(
-    "dag_3_4_8",
+    "dag_3_4_8_python",
     schedule_interval=timedelta(days=1),
     start_date=days_ago(1),
 )
