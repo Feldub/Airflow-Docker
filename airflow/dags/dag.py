@@ -82,11 +82,11 @@ load_data = PythonOperator(
 
 email_op = EmailOperator(
     task_id="send_email",
-    # dag=dag,
+    dag=dag,
     to="feldub@yandex.ru",
     subject="Airflow Email",
     html_content=None,
-    files=["/tmp/file_agg.csv.csv"]
+    files=["/tmp/file_agg.csv"]
 )
 
 bash_op = BashOperator(
@@ -97,4 +97,4 @@ bash_op = BashOperator(
 
 dag.doc_md = __doc__
 
-extract_data >> transform_data >> load_data >> bash_op
+extract_data >> transform_data >> load_data >> bash_op >> email_op
