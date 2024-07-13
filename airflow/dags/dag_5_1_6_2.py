@@ -12,7 +12,7 @@ def on_success_callback(context):
         chat_id="-1001525736146",
         text="Hello from Airflow!",
     )
-    return send_message.execute()
+    return send_message.execute(context)
 
 dag = DAG(
     "dag_5_1_6_2.py",
