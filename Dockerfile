@@ -34,6 +34,8 @@ ENV AIRFLOW__CORE__LOAD_EXAMPLES=False
 # Установка airflow с поддержкой всех баз данных
 RUN pip install apache-airflow[postgres]==${AIRFLOW_VERSION}
 
+# Устанавливаем расширение для работы с Telegram и SQLAlchemy
+RUN pip install apache-airflow-providers-telegram
 RUN pip install SQLAlchemy==1.3.24
 
 # Установка визуального редактора для работы в Airflow UI
