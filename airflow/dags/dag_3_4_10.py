@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 
 args = {'owner': 'airflow', 'start_date': days_ago(1), 'provide_context': True}
 dag = DAG('dag_3_4_10', schedule_interval='@once', default_args=args)

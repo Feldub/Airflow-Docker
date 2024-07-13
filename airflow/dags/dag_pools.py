@@ -1,6 +1,6 @@
 from airflow import DAG
-from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.empty import EmptyOperator
+from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
 # Создаем DAG
@@ -17,7 +17,7 @@ dag = DAG(
 )
 
 # Task 1 с использованием pool_1
-task1 = DummyOperator(
+task1 = EmptyOperator(
     task_id='task1',
     pool='pool_1',
     dag=dag,

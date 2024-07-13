@@ -5,8 +5,8 @@ import sqlite3
 import pandas as pd
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from airflow.operators.email_operator import EmailOperator
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.email import EmailOperator
+from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
 
