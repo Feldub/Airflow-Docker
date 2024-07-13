@@ -14,6 +14,7 @@ def on_success_callback(context):
     )
     return send_message.execute(context)
 
+
 dag = DAG(
     "dag_5_1_6_2.py",
     start_date=days_ago(1),
