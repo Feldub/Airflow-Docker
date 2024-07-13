@@ -1,6 +1,7 @@
 # Dirs
 __pycache__/
 .devcontainer/
+.vscode/
 data/
 
 # Files
