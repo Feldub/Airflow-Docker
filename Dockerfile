@@ -10,7 +10,7 @@ FROM python:3.8
 ENV AIRFLOW_HOME=/usr/local/airflow
 
 # Airflow глобальные переменные
-ARG AIRFLOW_VERSION=2.1.4
+ARG AIRFLOW_VERSION=2.9.2
 
 # Здесь и выше мы использовали глобальные переменные
 # Они нужны чтобы не прописывать каждый раз что то в 
@@ -36,6 +36,7 @@ RUN pip install apache-airflow[postgres]==${AIRFLOW_VERSION}
 
 # Устанавливаем расширение для работы с Telegram и SQLAlchemy
 RUN pip install apache-airflow-providers-telegram
+RUN pip install pandas
 RUN pip install SQLAlchemy==1.3.24
 
 # Установка визуального редактора для работы в Airflow UI
