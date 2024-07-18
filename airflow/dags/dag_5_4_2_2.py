@@ -12,7 +12,7 @@ def create_dag(dag_id, default_args, schedule="@daily"):
     )
 
     with dag:
-        t1 = EmptyOperator(task_id=f"task_{dag_id}")
+        t1 = EmptyOperator(task_id=f"task")
 
     return dag
 
@@ -25,4 +25,4 @@ for n in range(1, 4):
         "start_date": days_ago(1),
     }
 
-    create_dag(dag_id, default_args)
+    globals()[dag_id] = create_dag(dag_id, default_args)
