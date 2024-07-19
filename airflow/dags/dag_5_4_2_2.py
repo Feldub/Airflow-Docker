@@ -12,7 +12,7 @@ def create_dag(dag_id, default_args, schedule="@daily"):
     )
 
     with dag:
-        t1 = EmptyOperator(task_id=f"task")
+        _ = EmptyOperator(task_id="task")
 
     return dag
 
